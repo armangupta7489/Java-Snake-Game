@@ -37,6 +37,7 @@
 
 ## 📂 Folder Structure
 
+```
 SnakeGame/
 ├── src/
 │ ├── GameFrame.java # Sets up JFrame window
@@ -44,7 +45,7 @@ SnakeGame/
 │ └── SnakeGame.java # Main class (entry point)
 ├── README.md
 └── LICENSE
-
+```
 ## ⚙️ How to Run
 
 ### 🖥️ Steps
