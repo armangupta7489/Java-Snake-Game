@@ -39,11 +39,11 @@
 
 SnakeGame/
 ├── src/
-│ ├── GamePanel.java # Handles game logic and rendering
-│ ├── GameFrame.java # Main window setup
-│ ├── SnakeGame.java # Entry point for execution
-│ └── ...
----
+│ ├── GameFrame.java # Sets up JFrame window
+│ ├── GamePanel.java # Game logic, movement, and rendering
+│ └── SnakeGame.java # Main class (entry point)
+├── README.md
+└── LICENSE
 
 ## ⚙️ How to Run
 
