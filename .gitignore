@@ -1,0 +1,9 @@
+# Ignore compiled class files
+*.class
+
+# Ignore build directories
+bin/
+out/
+
+# macOS hidden files
+.DS_Store
