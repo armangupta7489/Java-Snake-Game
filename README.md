@@ -1,7 +1,7 @@
 # 🐍 Snake Game 
 
 
-👉 [Watch Project Demo](https://github.com/user-attachments/assets/3ad8d186-4a4f-4504-8aae-3eb4f3879202)
+![demo](https://github.com/user-attachments/assets/3ad8d186-4a4f-4504-8aae-3eb4f3879202)
 
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
