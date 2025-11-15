@@ -1,9 +1,8 @@
 # 🐍 Snake Game 
 
-<img width="1204" height="1252" alt="Screenshot 2025-11-15 at 11 05 25 PM" src="https://github.com/user-attachments/assets/89f2938f-1cd7-4cad-95b4-053de0f61ab3" />
-
 
 👉 [Watch Project Demo](https://github.com/user-attachments/assets/3ad8d186-4a4f-4504-8aae-3eb4f3879202)
+
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Swing](https://img.shields.io/badge/Swing%20%26%20AWT-GUI-blue?style=for-the-badge)
