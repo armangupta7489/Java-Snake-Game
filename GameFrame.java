@@ -1,16 +1,13 @@
-import javax.swing.JFrame;
+import javax.swing.*;
 
-public class GameFrame extends JFrame{
-
-	GameFrame(String user) {
-			
-		this.add(new GamePanel(user));
-		this.setTitle("Snake");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
-		this.pack();
-		this.setVisible(true);
-		this.setLocationRelativeTo(null);
-		
-	}
+public class GameFrame extends JFrame {
+    public GameFrame(String user, int difficulty) {
+        this.add(new GamePanel(user, difficulty));
+        this.setTitle("Snake Game");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }
 }

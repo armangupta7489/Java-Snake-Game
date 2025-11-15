@@ -3,102 +3,62 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class FeedbackPage extends JFrame implements ActionListener {
-    
-    private JButton[] starButtons = new JButton[5];
-    private int rating = 0;
-    private JTextArea commentArea;
-    private JButton submitButton;
-    public static String user;
-    public FeedbackPage(String user) {
-        setTitle("Feedback Page");
 
-        this.user = user; 
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JButton[] stars = new JButton[6];
+    JTextArea commentBox;
+    JButton submit, quit;
+    String user;
+    int score;
+
+    public FeedbackPage(String user, int score) {
+        this.user = user;
+        this.score = score;
+
+        setTitle("Rate the Game");
+        setSize(500, 400);
         setLayout(new BorderLayout());
 
-        JPanel starsPanel = new JPanel();
-        starsPanel.setLayout(new FlowLayout());
+        // ⭐⭐⭐⭐⭐ Star Panel
+        JPanel starPanel = new JPanel();
+        starPanel.setLayout(new FlowLayout());
 
         for (int i = 0; i < 5; i++) {
-            final int starValue = i + 1;
-            JButton starButton = new JButton("☆");
-            starButton.setFont(new Font("Serif", Font.PLAIN, 40));
-            starButton.setFocusPainted(false);
-            starButton.addActionListener(e -> {
-                rating = starValue;
-                updateStars();
-            });
-            starButtons[i] = starButton;
-            starsPanel.add(starButton);
+            stars[i] = new JButton("★");
+            stars[i].setFont(new Font("Arial", Font.BOLD, 24));
+            starPanel.add(stars[i]);
         }
 
-        commentArea = new JTextArea(5, 30);
-        JScrollPane scrollPane = new JScrollPane(commentArea);
-        commentArea.setLineWrap(true);
-        commentArea.setWrapStyleWord(true);
+        // Comment Box
+        commentBox = new JTextArea(5, 30);
 
-        JPanel commentPanel = new JPanel();
-        commentPanel.setLayout(new BorderLayout());
-        commentPanel.setBorder(BorderFactory.createTitledBorder("Additional Comments"));
-        commentPanel.add(scrollPane, BorderLayout.CENTER);
+        // Bottom Buttons Panel
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new FlowLayout());
 
-        submitButton = new JButton("Submit Feedback");
-        submitButton.addActionListener(this);
+        // Submit Button
+        submit = new JButton("Submit & Play Again");
+        submit.addActionListener(this);
 
-        add(starsPanel, BorderLayout.NORTH);
-        add(commentPanel, BorderLayout.CENTER);
-        add(submitButton, BorderLayout.SOUTH);
+        // Quit Button
+        quit = new JButton("Quit");
+        quit.addActionListener(e -> System.exit(0));
+
+        bottomPanel.add(submit);
+        bottomPanel.add(quit);
+
+        // Add components to Frame
+        add(starPanel, BorderLayout.NORTH);
+        add(new JScrollPane(commentBox), BorderLayout.CENTER);
+        add(bottomPanel, BorderLayout.SOUTH);
 
         setLocationRelativeTo(null);
-        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        
-    }
-
-    private void updateStars() {
-        for (int i = 0; i < 5; i++) {
-            if (i < rating) {
-                starButtons[i].setText("★");
-            } else {
-                starButtons[i].setText("☆");
-            }
-        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String comment = commentArea.getText().trim();
-
-        if (rating == 0) {
-            JOptionPane.showMessageDialog(this, "Please select a star rating.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        System.out.println("Rating: " + rating + " stars");
-        System.out.println("Comment: " + comment);
-
-        JOptionPane.showMessageDialog(this,
-                "Thank you for your feedback!\nRating: " + rating + " stars",
-                "Submitted",
-                JOptionPane.INFORMATION_MESSAGE);
-                if(JOptionPane.INFORMATION_MESSAGE==1){
-                    int response = JOptionPane.showConfirmDialog(null,"Do you want to play again?","Play Again?",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
-                    if(response == JOptionPane.YES_OPTION){
-                        new GameFrame(user);
-                    } else {
-                        System.exit(0);
-                    }
-                }
-                
-
-        rating = 0;
-        commentArea.setText("");
-        updateStars();
+        new DifficultyPage(user);
+        dispose();
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new FeedbackPage(user));
-    }
-
 }
