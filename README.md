@@ -1,4 +1,4 @@
-# 🐍 Snake Game 
+# Snake Game 
 
 
 ![demo](https://github.com/user-attachments/assets/3ad8d186-4a4f-4504-8aae-3eb4f3879202)
