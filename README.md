@@ -1,8 +1,7 @@
 # Snake Game 
 
 
-![demo](https://github.com/user-attachments/assets/3ad8d186-4a4f-4504-8aae-3eb4f3879202)
-
+![DEMO](https://github.com/user-attachments/assets/3056303e-fd5a-4c22-8219-8515377385da)
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Swing](https://img.shields.io/badge/Swing%20%26%20AWT-GUI-blue?style=for-the-badge)
